@@ -2,6 +2,8 @@
 @import url('https://fonts.cdnfonts.com/css/brillotus');
 @import url('https://fonts.cdnfonts.com/css/borel');
 @import url('https://fonts.cdnfonts.com/css/jetbrains-mono');
+@import url('https://fonts.cdnfonts.com/css/martian-mono');
+@import url('https://fonts.cdnfonts.com/css/iciel-gotham');
 body {
     margin: 0;
     padding: 0;
@@ -14,6 +16,26 @@ body {
     height: auto;
 }
 
+.typographic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+}
+
+.typographic h1 {
+    margin: 0;
+    font-size: 124pt;
+    font-family: 'iCiel Gotham', sans-serif;
+    color: rgb(0, 0, 0);
+    opacity: 10%;
+    width: 100%;
+    font-weight: 900;
+}
+
 .background {
     position: absolute;
     width: 100%;
@@ -22,20 +44,59 @@ body {
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
     position: absolute;
     width: 30%;
-    max-width: 190px;
+    max-width: 150px;
+    height: auto;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, max-width 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.card:hover {
+    max-width: 142px;
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(50%);
+    transform: scale(1.05); 
+    transition: 0.2s;
+}
+
+.card:hover .tag {
+    display: block;
 }
 
 .card1 { top: 10%; left: 15%; transform: rotate(10deg); }
 .card2 { top: 20%; right: 10%; transform: rotate(-12deg); }
-.card3 { bottom: 15%; left: 20%; transform: rotate(8deg); z-index: 9;}
-.card4 { bottom: 20%; right: 15%; transform: rotate(-10deg); z-index: 10;}
-.card5 { top: 5%; left: 50%; transform: translateX(-50%) rotate(5deg); }
-.card6 { bottom: 10%; left: 5%; transform: rotate(-7deg); z-index: 10;}
-.card7 { bottom: 5%; right: 5%; transform: rotate(7deg); z-index: 9;}
+.card3 { bottom: 15%; left: 20%; transform: rotate(8deg); z-index: 9; }
+.card4 { bottom: 20%; right: 15%; transform: rotate(-10deg); z-index: 10; }
+.card5 { top: 5%; left: 50%; right: 100%; transform:rotate(5deg); }
+.card6 { bottom: 10%; left: 5%; transform: rotate(-7deg); z-index: 10; }
+.card7 { bottom: 5%; right: 5%; transform: rotate(7deg); z-index: 9; }
+
+.tag {
+    position: absolute;
+    background-color: rgb(253, 253, 253);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding: 6px;
+    border-radius: 4px;
+    text-wrap:nowrap;
+    margin: 3px;
+    display: none;
+    font-size: 9px;
+    font-family: 'Martian Mono', sans-serif;
+    text-align: center;
+    transform: translateY(34px);
+}
 
 .main {
     z-index: 4;
@@ -107,6 +168,7 @@ body {
 
 .filler {
     z-index: 10;
+    overflow: hidden;
     margin-top: 890px;
     position: absolute;
     background-color: whitesmoke;
@@ -151,6 +213,7 @@ body {
     .card5 { top: 8%; left: 50%; }
     .card6 { bottom: 8%; left: 8%; }
     .card7 { bottom: 8%; right: 8%; }
+    .typographic h1{font-size: 100pt;}
 
     .main h1 {
         font-weight: 300;
@@ -166,6 +229,7 @@ body {
     .card5 { top: 10%; left: 50%; }
     .card6 { bottom: 4%; left: 5%; }
     .card7 { bottom: 5%; right: 3%; }
+    .typographic h1{font-size: 60pt;}
 
     .main h1 {
         font-weight: 300;
