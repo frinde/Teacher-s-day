@@ -9,12 +9,21 @@
 </head>
 <body>
     <section class="container">
+        <div id="border" class="border"></div>
+        <div id="welcomeText" class="show-up-text">
+            <h1>A Dedication to Ms. Cynthia</h1>
+            <p>Ucapan ini di dedikasikan untuk ibu guru sekaligus wali kelas kami, Ibu Cynthia </p>
+            <p style="font-weight: 600;" >- X RPL 3</p>
+            <div class="infomain"><i class="fa-solid fa-triangle-exclamation"></i>NOTE: untuk mobile, kecilkan resolusi ukuran tampilan untuk melihat hasil yang lebih baik</div>
+            <div class="close" onclick="closeWelcomeText()">Tutup</div>
+        </div>
         <div class="typographic">
             <h1 class="top">HAPPY</h1>
             <h1 class="mid">TEACHER'S</h1>
             <h1 class="bottom">DAY</h1>
         </div>
         <div class="background">
+            <button id="darkModeToggle" class="toggle"><i class="fa-solid fa-circle-half-stroke"></i></button>
             <div class="card1 card">
                 <img src="bg.png" alt="">
                 <span class="tag">LDKPD 30 oktober 2024 </span>
@@ -49,6 +58,7 @@
             <p>Our lovely teacher</p>
             <h1>Ms. <span>Cynthia</span></h1>
         </div>
+        <div class="fade"></div>
         <div class="filler">
             <audio src="Iwan Fals - Jendela Kelas 1 (Official Lyric Video).mp3" controls loop style="display: none;" id="music"></audio>
             <h1>Selamat hari guru</h1>
@@ -59,4 +69,5 @@
     </section>
 </body>
 <script src="script.js"></script>
+<script src="https://kit.fontawesome.com/a3e60157d1.js" crossorigin="anonymous"></script>
 </html>
