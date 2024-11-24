@@ -4,6 +4,37 @@
 @import url('https://fonts.cdnfonts.com/css/jetbrains-mono');
 @import url('https://fonts.cdnfonts.com/css/martian-mono');
 @import url('https://fonts.cdnfonts.com/css/iciel-gotham');
+
+body.dark-mode {background-color: #121212;color: #ffffff;}
+.dark-mode .container {background-color: #1e1e1e;}
+.dark-mode .show-up-text {background-color: #2e2e2e;color: #ffffff;}
+.dark-mode .card {box-shadow: rgba(255, 255, 255, 0.16) 0px 3px 6px, rgba(255, 255, 255, 0.23) 0px 3px 6px;}
+.dark-mode .card:hover .tag {background-color: #424242;color: #ffffff;}
+.dark-mode .main h1 {color: #e0e0e0;}
+.dark-mode .main p {color: #e0e0e0;}
+.dark-mode .close {background-color: #5a1a4d;}
+.dark-mode .infomain {background-color: #f1a31b;}
+.dark-mode .fade {background: rgb(26,26,26);background: linear-gradient(0deg, rgba(26,26,26,1) 0%, rgba(0,212,255,0) 100%);}
+.dark-mode .filler {background-color: #1a1a1a;}
+.dark-mode .blur-box {background-color: #1a1a1a;}
+.dark-mode .top {color: white;}
+.dark-mode .bottom {color: white}
+.dark-mode .toggle {color: white;}
+
+.toggle {
+    border: none;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+    font-size: 20pt;
+    transition: all 0.2s;
+    margin: 4px;
+}
+
+.toggle:hover {
+    transform: scale(0.97);
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -14,6 +45,94 @@ body {
 .container {
     width: 100%;
     height: auto;
+}
+
+.show-up-text::after {
+    content: ' ';
+    display: block;
+    width: 3px;
+    transform: translate(-12px, -120px);
+    height: 120px;
+    background-color: rgb(184, 184, 184);
+    position: absolute;
+}
+
+.show-up-text {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    opacity: 0;
+    padding: 20px;
+    font-family: 'iCiel Gotham', sans-serif;
+    text-align: left;
+    transition: opacity 1s ease-out; /* Transition for smooth animation */
+    z-index: 99;
+}
+
+.show-up-text h1 {
+    font-size: 12pt;
+    font-weight: 400;
+}
+
+.show-up-text p {
+    font-size: 10pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+}
+
+.infomain {
+    font-size: 12px;
+    padding: 12px;
+    font-size: 10px;
+    font-weight: 100;
+    background-color: #faaf2fb4;
+    border-radius: 4px;
+}
+
+.infomain i {
+    font-size: 9pt;
+    margin: 3px;
+}
+
+.close {
+    width: 100%;
+    height: fit-content;
+    background-color: #740938;
+    color: rgb(234, 234, 234);
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    padding: 2px;
+    position: absolute;
+    transition: all 0.2s ease;
+    transform: translate(-21px, 24px);
+}
+
+.close:hover {
+    background-color: #4d0826;
+    transform: translate(-21px, 24px) scale(0.99);
+}
+
+.border {
+    z-index: 98;
+    width: 100%;
+    display: block;
+    height: 200vh;
+    transition: all 0.2s;
+    opacity: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.show-up-text.active {
+    top: 50%;
+    opacity: 1;
+}
+
+.border.active {
+    opacity: 1;
 }
 
 .typographic {
@@ -35,6 +154,12 @@ body {
     width: 100%;
     font-weight: 900;
 }
+
+.mid {
+    background: url(https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNW9lcjBlMTdpOTYwbzF0bDZ6YTVsaXp1YmFyd2hud3QwNTE1OTBtOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0oYBxMzAFU3iHhsPk6/giphy.webp);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+} 
 
 .background {
     position: absolute;
@@ -166,12 +291,22 @@ body {
     font-weight: 900;
 }
 
+.fade {
+    z-index: 97;
+    width: 100%;
+    height: 140px;
+    margin-top: 750px;
+    position: absolute;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(0,212,255,0) 100%);
+}
+
 .filler {
     z-index: 10;
     overflow: hidden;
     margin-top: 890px;
     position: absolute;
-    background-color: whitesmoke;
+    background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -230,6 +365,8 @@ body {
     .card6 { bottom: 4%; left: 5%; }
     .card7 { bottom: 5%; right: 3%; }
     .typographic h1{font-size: 60pt;}
+    .show-up-text h1 {font-size: 14px;}
+    .show-up-text p {font-size: 12px; width: 220px;}
 
     .main h1 {
         font-weight: 300;
