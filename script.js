@@ -52,3 +52,45 @@ document.addEventListener('click', function() {
     const audio = document.getElementById('music');
     audio.play().catch(error => console.log('Autoplay dicegah:', error));
 }, { once: true }); // Hanya memutar sekali
+
+// Wait until the page has fully loaded
+window.addEventListener('load', function() {
+    const welcomeText = document.getElementById('welcomeText');
+    const broder = document.getElementById('border');
+
+    // Add the 'active' class to animate the text
+    setTimeout(() => {
+        welcomeText.classList.add('active');
+        broder.classList.add('active');
+    }, 100); // Delay for smooth entrance
+
+});
+
+function closeWelcomeText() {
+    const welcomeText = document.getElementById('welcomeText');
+    const border = document.getElementById('border');
+
+    welcomeText.style.display = "none";
+    border.style.display = "none";
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    // Periksa preferensi pengguna sebelumnya
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        body.classList.add('dark-mode');
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+
+        // Simpan preferensi pengguna
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    });
+});
